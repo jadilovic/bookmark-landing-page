@@ -1,0 +1,16 @@
+header {
+	position: relative;
+}
+
+#hero-illustration {
+	width: 100%;
+}
+
+.hero-decoration {
+	position: absolute;
+	height: 20vh;
+	background-color: blue;
+	width: 75vw;
+	top: 15em;
+	right: -2em;
+}

@@ -1,0 +1,87 @@
+.navbar,
+.navbar-menu {
+	list-style-type: none;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.navbar-mobile {
+	display: none;
+	align-items: flex-start;
+	list-style-type: none;
+	position: absolute;
+	top: 0;
+	left: -760px;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(37, 43, 70, 0.9);
+	padding: 2em;
+	transition: left 0.3s ease-in-out;
+	z-index: 3;
+}
+
+.active {
+	left: 0;
+}
+
+.navbar-mobile-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 2em;
+}
+
+#hamburger,
+#close {
+	cursor: pointer;
+}
+
+.navbar-mobile-links {
+	color: white;
+	text-transform: uppercase;
+	font-size: 1.3em;
+	letter-spacing: 0.2em;
+	cursor: pointer;
+	line-height: 3em;
+	border-top: 1px solid hsl(229, 8%, 60%);
+}
+
+ul li:nth-last-child(2) {
+	cursor: default;
+}
+
+#login-btn {
+	padding: 0.5em;
+	width: 100%;
+	font-size: 1em;
+	text-transform: uppercase;
+	color: white;
+	background-color: hsl(229, 31%, 21%);
+	border: 2px solid white;
+	border-radius: 0.3em;
+	margin: 1em 0;
+	cursor: pointer;
+}
+
+.social-mobile-links {
+	position: absolute;
+	bottom: 3em;
+	right: calc(50% - 1.5em);
+}
+
+#facebook {
+	margin-right: 1em;
+	cursor: pointer;
+}
+
+#twitter {
+	cursor: pointer;
+	margin-left: 1em;
+}
+
+@media screen and (max-width: 760px) {
+	.navbar-mobile {
+		display: block;
+	}
+}
