@@ -15,14 +15,14 @@ const Header = () => {
 					<button id="firefox-btn">Get it on Firefox</button>
 				</article>
 			</section>
-			<secttion className="hero">
+			<section className="hero">
 				<img
 					id="hero-illustration"
 					src={heroIllustration}
 					alt="hero illustration"
 				/>
-			</secttion>
-			<div className="hero-decoration"></div>
+				<div className="hero-decoration"></div>
+			</section>
 		</header>
 	);
 };
