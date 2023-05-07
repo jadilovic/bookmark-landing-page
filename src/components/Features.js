@@ -1,3 +1,6 @@
+import '../styles/Features.css';
+import Feature from './Feature';
+
 const Features = () => {
 	return (
 		<main>
@@ -10,10 +13,17 @@ const Features = () => {
 				</p>
 			</section>
 			<ul className="features-tabs">
-				<li className="feature-tab">Simple Bookmarking</li>
-				<li className="feature-tab">Speedy Searching</li>
-				<li className="feature-tab">Easy Sharing</li>
+				<li className="feature-tab">
+					<span>Simple Bookmarking</span>
+				</li>
+				<li className="feature-tab">
+					<span>Speedy Searching</span>
+				</li>
+				<li className="feature-tab">
+					<span>Easy Sharing</span>
+				</li>
 			</ul>
+			<Feature />
 		</main>
 	);
 };

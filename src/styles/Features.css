@@ -1,0 +1,32 @@
+main {
+	margin: 9em 0;
+}
+
+.features-description {
+	margin: 1.5em 0;
+	line-height: 2em;
+	color: gray;
+	font-weight: 500;
+}
+
+.features-tabs {
+	list-style-type: none;
+}
+
+.feature-tab {
+	border-bottom: 1px solid gray;
+	font-size: 1.2em;
+	line-height: 3em;
+	font-weight: 500;
+	color: gray;
+}
+
+span {
+	padding: 0.8em 0;
+	border-bottom: 0.2em solid hsl(0, 94%, 66%);
+}
+
+span:hover {
+	color: black;
+	cursor: pointer;
+}
