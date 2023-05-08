@@ -2,6 +2,9 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
 import Features from './components/Features';
+import Extensions from './components/Extensions';
+import FAQ from './components/FAQ';
+import Footer from './components/Footer';
 
 function App() {
 	return (
@@ -9,7 +12,9 @@ function App() {
 			<Navbar />
 			<Header />
 			<Features />
-			<h1>Home Page</h1>
+			<Extensions />
+			<FAQ />
+			<Footer />
 		</div>
 	);
 }

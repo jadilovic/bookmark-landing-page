@@ -3,9 +3,6 @@ header {
 	flex-direction: row;
 }
 
-.intro {
-}
-
 .hero {
 	position: relative;
 	margin: 3em 0;
@@ -41,6 +38,7 @@ h1 {
 	font-weight: 600;
 	border-radius: 0.5em;
 	cursor: pointer;
+	border: 0.2em solid transparent;
 }
 
 #chrome-btn {
@@ -53,8 +51,20 @@ h1 {
 #firefox-btn {
 	color: hsl(228, 30%, 13%);
 	background-color: hsl(0, 0%, 80%);
-	-webkit-box-shadow: 0px 10px 10px 0px grey;
-	box-shadow: 0px 10px 10px 0px grey;
+	-webkit-box-shadow: 0px 10px 10px 0px #d5d4d4;
+	box-shadow: 0px 10px 10px 0px #d5d4d4;
+}
+
+#chrome-btn:hover {
+	color: hsl(231, 69%, 60%);
+	background-color: white;
+	border: 0.2em solid hsl(231, 69%, 60%);
+}
+
+#firefox-btn:hover {
+	color: hsl(228, 30%, 13%);
+	background-color: white;
+	border: 0.2em solid hsl(228, 30%, 13%);
 }
 
 .hero-decoration {

@@ -1,0 +1,8 @@
+footer {
+	position: absolute;
+	left: 0;
+	height: 20em;
+	width: 100%;
+	margin-top: 4em;
+	background-color: hsl(231, 69%, 60%);
+}

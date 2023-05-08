@@ -1,4 +1,15 @@
 .App {
 	text-align: center;
-	padding: 2em;
+	padding: 2em 2em 0 2em;
+}
+
+.section-title {
+	color: hsl(229, 31%, 21%);
+}
+
+.section-description {
+	margin: 1.5em 0;
+	line-height: 2em;
+	color: hsl(229, 8%, 60%);
+	font-weight: 500;
 }
