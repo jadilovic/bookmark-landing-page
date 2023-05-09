@@ -1,9 +1,27 @@
+.main-nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
 .navbar,
 .navbar-menu {
 	list-style-type: none;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+}
+
+.navbar-desktop {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	column-gap: 3em;
+	text-transform: uppercase;
+}
+
+.mobile-screen {
+	display: none;
 }
 
 .navbar-mobile {
@@ -13,7 +31,7 @@
 	position: absolute;
 	top: 0;
 	left: -760px;
-	width: 100vw;
+	width: calc(100vw - 1.03em);
 	height: 100vh;
 	background-color: rgba(37, 43, 70, 0.9);
 	padding: 2em;
@@ -80,8 +98,32 @@ ul li:nth-last-child(2) {
 	margin-left: 1em;
 }
 
+#nav-login-btn {
+	padding: 0.5em 2em;
+	width: 100%;
+	font-size: 1em;
+	text-transform: uppercase;
+	color: white;
+	background-color: hsl(0, 94%, 66%);
+	border: 2px solid white;
+	border-radius: 0.3em;
+	cursor: pointer;
+}
+
 @media screen and (max-width: 760px) {
+	.main-nav {
+		display: block;
+	}
+
 	.navbar-mobile {
 		display: block;
+	}
+
+	.mobile-screen {
+		display: block;
+	}
+
+	.navbar-desktop {
+		display: none;
 	}
 }

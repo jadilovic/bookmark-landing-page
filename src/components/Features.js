@@ -17,17 +17,17 @@ const Features = () => {
 			</section>
 			<ul className="features-tabs">
 				<li onClick={() => setActiveTab(0)} className="feature-tab">
-					<span className={`${activeTab === 0 ? 'active' : ''}`}>
+					<span className={`${activeTab === 0 ? 'active-feature' : ''}`}>
 						Simple Bookmarking
 					</span>
 				</li>
 				<li onClick={() => setActiveTab(1)} className="feature-tab">
-					<span className={`${activeTab === 1 ? 'active' : ''}`}>
+					<span className={`${activeTab === 1 ? 'active-feature' : ''}`}>
 						Speedy Searching
 					</span>
 				</li>
 				<li onClick={() => setActiveTab(2)} className="feature-tab">
-					<span className={`${activeTab === 2 ? 'active' : ''}`}>
+					<span className={`${activeTab === 2 ? 'active-feature' : ''}`}>
 						Easy Sharing
 					</span>
 				</li>

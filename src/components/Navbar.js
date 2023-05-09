@@ -11,18 +11,26 @@ const Navbar = () => {
 	const [openMenu, setOpenMenu] = useState(false);
 
 	return (
-		<nav>
+		<nav className="main-nav">
 			<ul className="navbar">
 				<li>
 					<img src={bookmarkLogo} alt="bookmark logo" />
 				</li>
-				<li>
+				<li className="mobile-screen">
 					<img
 						id="hamburger"
 						onClick={() => setOpenMenu(true)}
 						src={hamburgerIcon}
 						alt="hamburger icon"
 					/>
+				</li>
+			</ul>
+			<ul className="navbar-desktop">
+				<li className="navbar-desktop-link">Features</li>
+				<li className="navbar-desktop-link">Pricing</li>
+				<li className="navbar-desktop-link">Contact</li>
+				<li className="navbar-desktop-link">
+					<button id="nav-login-btn">Login</button>
 				</li>
 			</ul>
 			<ul className={`navbar-mobile ${openMenu ? 'active' : ''} `}>
