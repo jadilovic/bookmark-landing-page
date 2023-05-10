@@ -4,11 +4,12 @@ import bookmarkLogo from '../images/logo-bookmark.svg';
 import bookmarkLogoDark from '../images/logo-bookmark-dark.svg';
 import hamburgerIcon from '../images/icon-hamburger.svg';
 import closeIcon from '../images/icon-close.svg';
-import facebookIcon from '../images/icon-facebook.svg';
-import twitterIcon from '../images/icon-twitter.svg';
+import closeIconRed from '../images/icon-close-red.svg';
+import SocialLinks from './SocialLinks';
 
 const Navbar = () => {
 	const [openMenu, setOpenMenu] = useState(false);
+	const [isHovered, setIsHovered] = useState(false);
 
 	return (
 		<nav className="main-nav">
@@ -38,8 +39,10 @@ const Navbar = () => {
 					<img src={bookmarkLogoDark} alt="bookmark logo dark" />
 					<img
 						id="close"
+						onMouseEnter={() => setIsHovered(true)}
+						onMouseLeave={() => setIsHovered(false)}
 						onClick={() => setOpenMenu(false)}
-						src={closeIcon}
+						src={isHovered ? closeIconRed : closeIcon}
 						alt="close icon"
 					/>
 				</li>
@@ -50,8 +53,7 @@ const Navbar = () => {
 					<button id="login-btn">Login</button>
 				</li>
 				<li className="social-mobile-links">
-					<img id="facebook" src={facebookIcon} alt="facebook icon" />
-					<img id="twitter" src={twitterIcon} alt="twitter icon" />
+					<SocialLinks />
 				</li>
 			</ul>
 		</nav>

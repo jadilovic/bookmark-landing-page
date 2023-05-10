@@ -1,14 +1,38 @@
+import { useEffect, useState, useRef } from 'react';
 import featureIllustration1 from '../images/illustration-features-tab-1.svg';
 import featureIllustration2 from '../images/illustration-features-tab-2.svg';
 import featureIllustration3 from '../images/illustration-features-tab-3.svg';
 
 const Feature = ({ activeTab }) => {
+	const [elementWidth, setElementWidth] = useState(null);
+	const [elementHeight, setElementHeight] = useState(null);
+	const elementRef = useRef(null);
+
+	useEffect(() => {
+		const resizeObserver = new ResizeObserver((entries) => {
+			const { width, height } = entries[0].contentRect;
+			setElementWidth(width);
+			setElementHeight(height);
+		});
+
+		if (elementRef.current) {
+			resizeObserver.observe(elementRef.current);
+		}
+
+		return () => {
+			if (elementRef.current) {
+				resizeObserver.unobserve(elementRef.current);
+			}
+		};
+	}, []);
+
 	const featuresData = [
 		{
 			title: 'Bookmark in one click',
 			description:
 				'Organize your bookmarks however you like. Our simple drag-and-drop interface gives you complete control over how you manage your favourite sites.',
 			illustration: featureIllustration1,
+			button: 'More info',
 		},
 		{
 			title: 'Intelligent search',
@@ -26,37 +50,32 @@ const Feature = ({ activeTab }) => {
 		},
 	];
 
-	const getFeatureDecorationHeight = (tabValue) => {
-		switch (tabValue) {
-			case 1:
-				return '65vw';
-			case 2:
-				return '70vw';
-			default:
-				return '50vw';
-		}
-	};
-
 	return (
 		<section className="feature">
-			<img
-				id="feature-illustration"
-				src={featuresData[activeTab].illustration}
-				alt="feature illustration"
-			/>
+			<div className="image-decoration-container">
+				<img
+					ref={elementRef}
+					id="feature-illustration"
+					src={featuresData[activeTab].illustration}
+					alt="feature illustration"
+				/>
+				<div
+					className="feature-decoration"
+					style={{
+						height: `${activeTab > 0 ? elementHeight - 50 : elementHeight}px`,
+						width: `${
+							activeTab > 0 ? elementWidth - 100 : elementWidth - 50
+						}px`,
+					}}
+				></div>
+			</div>
 			<article>
 				<h2 className="section-title">{featuresData[activeTab].title}</h2>
 				<p className="section-description">
 					{featuresData[activeTab].description}
 				</p>
-			</article>
-			{featuresData[activeTab]?.button ? (
 				<button id="more-info-btn">{featuresData[activeTab]?.button}</button>
-			) : null}
-			<div
-				className="feature-decoration"
-				style={{ height: getFeatureDecorationHeight(activeTab) }}
-			></div>
+			</article>
 		</section>
 	);
 };

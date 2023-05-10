@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import errorIcon from '../images/icon-error.svg';
 
 const Contact = () => {
 	const [email, setEmail] = useState('');
@@ -41,6 +42,9 @@ const Contact = () => {
 							value={email}
 							onChange={handleEmailChange}
 						/>
+						{emailError && (
+							<img className="error-icon" src={errorIcon} alt="error icon" />
+						)}
 						{emailError && <p className="error-message">{emailError}</p>}
 					</div>
 					<button id="contact-btn" type="submit">

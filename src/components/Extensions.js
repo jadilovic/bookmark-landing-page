@@ -1,9 +1,25 @@
+import { useState, useEffect } from 'react';
 import ExtensionCard from './ExtensionCard';
 import chromeLogo from '../images/logo-chrome.svg';
 import firefoxLogo from '../images/logo-firefox.svg';
 import operaLogo from '../images/logo-opera.svg';
 
 const Extensions = () => {
+	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+	const DEFAULT_MARGIN_TOP = 2;
+
+	const handleResize = () => {
+		setWindowWidth(window.innerWidth);
+	};
+
+	useEffect(() => {
+		window.addEventListener('resize', handleResize);
+
+		return () => {
+			window.removeEventListener('resize', handleResize);
+		};
+	}, []);
+
 	const browsers = [
 		{
 			logo: chromeLogo,
@@ -21,6 +37,7 @@ const Extensions = () => {
 			description: 'Minimum version 46',
 		},
 	];
+
 	return (
 		<section className="extensions">
 			<article className="extensions-intro">
@@ -33,7 +50,15 @@ const Extensions = () => {
 			<article className="extension-cards">
 				{browsers.map((browser, index) => {
 					return (
-						<div key={index} className="extension-card">
+						<div
+							key={index}
+							className="extension-card"
+							style={{
+								marginTop: `${
+									windowWidth > 760 ? DEFAULT_MARGIN_TOP + index * 3 : 0
+								}em`,
+							}}
+						>
 							<ExtensionCard browser={browser} />
 						</div>
 					);
